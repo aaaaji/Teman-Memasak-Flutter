@@ -1,0 +1,301 @@
+[
+  {
+    "id": "2357570",
+    "steamAppId": 2357570,
+    "title": "Overwatch 2",
+    "genre": "Shooter",
+    "releaseDate": "2022-10-04",
+    "description": "Game aksi tim dengan beragam hero dan kemampuan unik. Pemain bekerja sama untuk menyelesaikan objektif dalam pertempuran yang dinamis.",
+    "rating": 4.8,
+    "popularity": 98,
+    "featured": true,
+    "platforms": [
+      "PC",
+      "Console"
+    ],
+    "tags": [
+      "Multiplayer",
+      "Hero shooter"
+    ],
+    "iconKey": "rocket",
+    "primaryColor": "#D86B2C",
+    "secondaryColor": "#F2B25F",
+    "coverUrl": "https://cdn.cloudflare.steamstatic.com/steam/apps/2357570/header.jpg",
+    "requirements": {
+      "os": "Windows 10 64-bit",
+      "processor": "Intel Core i3 atau setara",
+      "memory": "6 GB RAM",
+      "graphics": "GPU kompatibel DirectX 11",
+      "storage": "50 GB"
+    }
+  },
+  {
+    "id": "578080",
+    "steamAppId": 578080,
+    "title": "PUBG: BATTLEGROUNDS",
+    "genre": "Shooter",
+    "releaseDate": "2017-12-21",
+    "description": "Game battle royale di mana pemain bertahan hidup, mengumpulkan perlengkapan, dan bersaing hingga menjadi tim terakhir di arena.",
+    "rating": 4.7,
+    "popularity": 96,
+    "featured": true,
+    "platforms": [
+      "PC",
+      "Console"
+    ],
+    "tags": [
+      "Battle royale",
+      "Multiplayer"
+    ],
+    "iconKey": "bolt",
+    "primaryColor": "#3F443A",
+    "secondaryColor": "#8A876F",
+    "coverUrl": "https://cdn.cloudflare.steamstatic.com/steam/apps/578080/header.jpg",
+    "requirements": {
+      "os": "Windows 10 64-bit",
+      "processor": "Intel Core i5 atau setara",
+      "memory": "8 GB RAM",
+      "graphics": "GPU kelas menengah",
+      "storage": "40 GB"
+    }
+  },
+  {
+    "id": "1551360",
+    "steamAppId": 1551360,
+    "title": "Forza Horizon 5",
+    "genre": "Balap",
+    "releaseDate": "2021-11-09",
+    "description": "Jelajahi dunia terbuka dan beragam tantangan balap dengan koleksi kendaraan. Nikmati lingkungan alam dan kota di Meksiko.",
+    "rating": 4.9,
+    "popularity": 94,
+    "featured": true,
+    "platforms": [
+      "PC",
+      "Console"
+    ],
+    "tags": [
+      "Open world",
+      "Racing"
+    ],
+    "iconKey": "car",
+    "primaryColor": "#A94C29",
+    "secondaryColor": "#F1B46A",
+    "coverUrl": "https://cdn.cloudflare.steamstatic.com/steam/apps/1551360/header.jpg",
+    "requirements": {
+      "os": "Windows 10 64-bit",
+      "processor": "Intel Core i5 atau setara",
+      "memory": "8 GB RAM",
+      "graphics": "GPU 4 GB VRAM",
+      "storage": "110 GB"
+    }
+  },
+  {
+    "id": "1466860",
+    "steamAppId": 1466860,
+    "title": "Age of Empires IV",
+    "genre": "Strategi",
+    "releaseDate": "2021-10-28",
+    "description": "Bangun peradaban, kumpulkan sumber daya, dan pimpin pasukan dalam pertempuran strategi waktu nyata.",
+    "rating": 4.8,
+    "popularity": 89,
+    "featured": false,
+    "platforms": [
+      "PC"
+    ],
+    "tags": [
+      "RTS",
+      "Historical"
+    ],
+    "iconKey": "castle",
+    "primaryColor": "#745A37",
+    "secondaryColor": "#CEAC6A",
+    "coverUrl": "https://cdn.cloudflare.steamstatic.com/steam/apps/1466860/header.jpg",
+    "requirements": {
+      "os": "Windows 10 64-bit",
+      "processor": "Intel Core i5 atau setara",
+      "memory": "8 GB RAM",
+      "graphics": "GPU kompatibel",
+      "storage": "50 GB"
+    }
+  },
+  {
+    "id": "2878980",
+    "steamAppId": 2878980,
+    "title": "NBA 2K25",
+    "genre": "Sport",
+    "releaseDate": "2024-09-06",
+    "description": "Simulasi basket yang menampilkan pertandingan, strategi tim, dan pengalaman mengelola atlet di lapangan.",
+    "rating": 4.5,
+    "popularity": 87,
+    "featured": false,
+    "platforms": [
+      "PC",
+      "Console"
+    ],
+    "tags": [
+      "Basket",
+      "Sports simulation"
+    ],
+    "iconKey": "ball",
+    "primaryColor": "#9F4B36",
+    "secondaryColor": "#D78D69",
+    "coverUrl": "https://cdn.cloudflare.steamstatic.com/steam/apps/2878980/header.jpg",
+    "requirements": {
+      "os": "Windows 10 64-bit",
+      "processor": "Intel Core i5 atau setara",
+      "memory": "8 GB RAM",
+      "graphics": "GPU kelas menengah",
+      "storage": "100 GB"
+    }
+  },
+  {
+    "id": "1086940",
+    "steamAppId": 1086940,
+    "title": "Baldur's Gate 3",
+    "genre": "RPG",
+    "releaseDate": "2023-08-03",
+    "description": "Petualangan role-playing berbasis cerita dan pilihan pemain, dengan eksplorasi dunia fantasi serta pertarungan taktis.",
+    "rating": 4.9,
+    "popularity": 99,
+    "featured": true,
+    "platforms": [
+      "PC",
+      "Console"
+    ],
+    "tags": [
+      "Fantasy",
+      "Story rich"
+    ],
+    "iconKey": "sword",
+    "primaryColor": "#54455D",
+    "secondaryColor": "#9C7692",
+    "coverUrl": "https://cdn.cloudflare.steamstatic.com/steam/apps/1086940/header.jpg",
+    "requirements": {
+      "os": "Windows 10 64-bit",
+      "processor": "Intel Core i5 atau setara",
+      "memory": "8 GB RAM",
+      "graphics": "GPU 4 GB VRAM",
+      "storage": "150 GB"
+    }
+  },
+  {
+    "id": "413150",
+    "steamAppId": 413150,
+    "title": "Stardew Valley",
+    "genre": "RPG",
+    "releaseDate": "2016-02-26",
+    "description": "Bangun pertanian, berteman dengan penduduk desa, dan jelajahi beragam aktivitas seperti memancing dan menambang.",
+    "rating": 4.9,
+    "popularity": 91,
+    "featured": true,
+    "platforms": [
+      "PC",
+      "Console",
+      "Mobile"
+    ],
+    "tags": [
+      "Farming",
+      "Pixel art"
+    ],
+    "iconKey": "water",
+    "primaryColor": "#277B68",
+    "secondaryColor": "#86C49D",
+    "coverUrl": "https://cdn.cloudflare.steamstatic.com/steam/apps/413150/header.jpg",
+    "requirements": {
+      "os": "Windows 10 atau setara",
+      "processor": "Dual-core",
+      "memory": "2 GB RAM",
+      "graphics": "Integrated graphics",
+      "storage": "1 GB"
+    }
+  },
+  {
+    "id": "730",
+    "steamAppId": 730,
+    "title": "Counter-Strike 2",
+    "genre": "Shooter",
+    "releaseDate": "2023-09-27",
+    "description": "Game tembak-menembak kompetitif berbasis tim yang menekankan koordinasi, strategi, dan ketepatan.",
+    "rating": 4.7,
+    "popularity": 97,
+    "featured": true,
+    "platforms": [
+      "PC"
+    ],
+    "tags": [
+      "Esports",
+      "Competitive"
+    ],
+    "iconKey": "bolt",
+    "primaryColor": "#2F5661",
+    "secondaryColor": "#DBB45B",
+    "coverUrl": "https://cdn.cloudflare.steamstatic.com/steam/apps/730/header.jpg",
+    "requirements": {
+      "os": "Windows 10 64-bit",
+      "processor": "Intel Core i5 atau setara",
+      "memory": "8 GB RAM",
+      "graphics": "GPU kompatibel",
+      "storage": "85 GB"
+    }
+  },
+  {
+    "id": "1145360",
+    "steamAppId": 1145360,
+    "title": "Hades",
+    "genre": "RPG",
+    "releaseDate": "2020-09-17",
+    "description": "Game aksi roguelike bertema mitologi dengan pertarungan cepat, karakter menarik, dan cerita yang berkembang setiap percobaan.",
+    "rating": 4.9,
+    "popularity": 92,
+    "featured": false,
+    "platforms": [
+      "PC",
+      "Console"
+    ],
+    "tags": [
+      "Roguelike",
+      "Action"
+    ],
+    "iconKey": "sword",
+    "primaryColor": "#4C354C",
+    "secondaryColor": "#D26963",
+    "coverUrl": "https://cdn.cloudflare.steamstatic.com/steam/apps/1145360/header.jpg",
+    "requirements": {
+      "os": "Windows 10 64-bit",
+      "processor": "Dual-core",
+      "memory": "4 GB RAM",
+      "graphics": "GPU kompatibel",
+      "storage": "15 GB"
+    }
+  },
+  {
+    "id": "244210",
+    "steamAppId": 244210,
+    "title": "Assetto Corsa",
+    "genre": "Balap",
+    "releaseDate": "2014-12-19",
+    "description": "Simulasi mengemudi yang berfokus pada pengalaman berkendara realistis, pilihan mobil, dan berbagai sirkuit.",
+    "rating": 4.6,
+    "popularity": 81,
+    "featured": false,
+    "platforms": [
+      "PC",
+      "Console"
+    ],
+    "tags": [
+      "Racing sim",
+      "Cars"
+    ],
+    "iconKey": "car",
+    "primaryColor": "#3B4A57",
+    "secondaryColor": "#B1B6BB",
+    "coverUrl": "https://cdn.cloudflare.steamstatic.com/steam/apps/244210/header.jpg",
+    "requirements": {
+      "os": "Windows 10 64-bit",
+      "processor": "Intel Core i3 atau setara",
+      "memory": "4 GB RAM",
+      "graphics": "GPU 2 GB VRAM",
+      "storage": "20 GB"
+    }
+  }
+]
