@@ -1,4 +1,4 @@
-package com.example.gameatlas
+package com.example.teman_memasak
 
 import io.flutter.embedding.android.FlutterActivity
 

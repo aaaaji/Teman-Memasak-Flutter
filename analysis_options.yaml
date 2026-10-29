@@ -1,4 +1,7 @@
 analyzer:
+  errors:
+    unused_import: warning
+    dead_code: warning
   exclude:
     - build/**
     - android/**
@@ -7,4 +10,3 @@ analyzer:
     - windows/**
     - macos/**
     - linux/**
-include: package:flutter_lints/flutter.yaml

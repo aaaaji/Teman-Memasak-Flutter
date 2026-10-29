@@ -1,6 +1,6 @@
-# GameAtlas
+# Teman Memasak
 
-GameAtlas adalah aplikasi katalog game berbasis Flutter. Aplikasi ini dibuat untuk menampilkan informasi beberapa game dalam tampilan yang sederhana dan mudah digunakan. Pengguna dapat melihat game di beranda, mencari game berdasarkan judul, memilih kategori, serta membuka halaman detail untuk membaca informasi game yang dipilih.
+Teman Memasak adalah aplikasi katalog resep masakan berbasis Flutter. Aplikasi ini dibuat untuk membantu pengguna menemukan ide masakan melalui tampilan yang sederhana dan mudah digunakan. Pengguna dapat melihat rekomendasi resep di beranda, mencari masakan berdasarkan nama atau bahan, memilih kategori, serta membuka halaman detail untuk membaca bahan dan langkah memasak.
 
 Proyek ini menggunakan data lokal dalam format JSON. Data tersebut belum diambil dari server, tetapi susunan kode sudah memisahkan bagian tampilan, model, dan pengambilan data agar lebih mudah dikembangkan nantinya.
 
@@ -8,80 +8,94 @@ Proyek ini menggunakan data lokal dalam format JSON. Data tersebut belum diambil
 
 **1. Beranda**
 
-Halaman pertama menampilkan kolom pencarian, pilihan kategori, game populer, dan game terbaru. Judul game dapat dipilih untuk membuka halaman detail. Tombol *Lihat semua* dan pilihan kategori mengarahkan pengguna ke halaman daftar game.
+Halaman pertama menampilkan nama aplikasi, banner pengenalan, pilihan kategori masakan, resep populer, dan rekomendasi pilihan hari ini. Tombol pencarian, tombol untuk menjelajahi resep, dan pilihan kategori mengarahkan pengguna ke halaman Jelajahi. Kartu resep dapat dipilih untuk membuka halaman detail.
 
-**2. Daftar Game**
+**2. Daftar Resep (Jelajahi)**
 
-Halaman ini menampilkan seluruh game yang tersedia. Pengguna dapat mencari judul, menyaring berdasarkan kategori, dan mengurutkan daftar berdasarkan popularitas, tanggal rilis, atau rating.
+Halaman ini menampilkan seluruh resep yang tersedia. Pengguna dapat mencari masakan berdasarkan judul, kategori, deskripsi, atau bahan; menyaring resep berdasarkan kategori; serta mengurutkan daftar berdasarkan rekomendasi, waktu memasak tercepat, atau urutan alfabet (A–Z).
 
-**3. Detail Game**
+**3. Detail Resep**
 
-Halaman detail menampilkan cover, judul, genre, tanggal rilis, platform, deskripsi singkat, dan contoh spesifikasi minimum game. Tombol kembali digunakan untuk membuka halaman sebelumnya.
+Halaman detail menampilkan ilustrasi masakan, nama resep, kategori, deskripsi, rating contoh, perkiraan waktu memasak, jumlah porsi, dan tingkat kesulitan. Pengguna dapat mencentang bahan yang sudah disiapkan, mengikuti langkah memasak secara berurutan, membaca tips, serta menekan tombol *Selesai Memasak*. Tombol kembali digunakan untuk membuka halaman sebelumnya.
+
+**4. Favorit**
+
+Halaman Favorit menampilkan resep yang telah ditandai menggunakan ikon hati. Pengguna dapat menambahkan atau menghapus resep dari daftar favorit dan membuka kembali detail resep yang dipilih. Penyimpanan favorit pada versi ini masih bersifat sementara selama aplikasi berjalan.
 
 ## Struktur Folder
 
 ```text
-gameatlas_flutter/
+teman_memasak_flutter/
 ├── lib/
-│   ├── main.dart                     # Titik awal aplikasi
-│   ├── app.dart                      # Pengaturan tema dan pemuatan data awal
-│   ├── core/
-│   │   └── app_colors.dart           # Warna yang digunakan di aplikasi
+│   ├── main.dart                         # Titik awal aplikasi
+│   ├── app.dart                          # Tema, pemuatan data awal, navigasi, dan favorit
+│   ├── theme/
+│   │   └── app_palette.dart              # Warna yang digunakan di aplikasi
 │   ├── models/
-│   │   └── game.dart                 # Model data game
+│   │   └── recipe.dart                   # Model data resep
 │   ├── data/
-│   │   └── game_repository.dart      # Pembacaan data dari JSON lokal
+│   │   ├── recipe_repository.dart        # Pembacaan data dari JSON lokal
+│   │   └── recipe_categories.dart        # Daftar kategori masakan
 │   ├── screens/
-│   │   ├── home_screen.dart          # Halaman beranda
-│   │   ├── game_list_screen.dart     # Halaman daftar dan filter game
-│   │   └── game_detail_screen.dart   # Halaman detail game
+│   │   ├── home_screen.dart              # Halaman beranda
+│   │   ├── explore_screen.dart           # Halaman daftar, pencarian, dan filter resep
+│   │   ├── detail_screen.dart            # Halaman detail resep
+│   │   └── favorites_screen.dart         # Halaman resep favorit
 │   └── widgets/
-│       ├── game_cover.dart           # Widget gambar cover
-│       ├── game_list_tile.dart       # Komponen item daftar game
-│       └── section_heading.dart      # Judul bagian pada halaman
+│       └── recipe_widgets.dart           # Komponen ilustrasi, kartu resep, dan tombol favorit
 ├── assets/
 │   └── data/
-│       └── games.json               # Data game sementara
+│       └── recipes.json                  # Data resep sementara
 ├── docs/
-│   ├── wireframe.png                # Rancangan tampilan
-│   └── DESAIN_DAN_NAVIGASI.md        # Catatan desain dan navigasi
+│   ├── wireframe_teman_memasak.png       # Rancangan awal antarmuka
+│   └── KONSEP_DESAIN.md                  # Catatan desain dan navigasi
 ├── test/
-│   └── game_model_test.dart          # Pengujian pembacaan data model
-└── pubspec.yaml                     # Konfigurasi Flutter dan aset
+│   └── recipe_model_test.dart            # Pengujian pembacaan data model
+├── tools/
+│   └── set_app_name.ps1                  # Mengatur nama aplikasi pada Android
+├── setup_windows.bat                     # Skrip persiapan proyek untuk Windows
+├── setup_linux_mac.sh                    # Skrip persiapan untuk Linux/macOS
+└── pubspec.yaml                          # Konfigurasi Flutter dan aset
 ```
 
-Folder `screens` berisi tampilan untuk masing-masing halaman, sedangkan `widgets` berisi komponen yang dipakai kembali di beberapa bagian aplikasi. Pemisahan ini dilakukan supaya kode lebih mudah dibaca dan perubahan tampilan tidak harus dilakukan dalam satu file besar.
+Folder `screens` berisi tampilan masing-masing halaman, sedangkan `widgets` berisi komponen yang dapat digunakan kembali. Pemisahan ini dilakukan supaya kode lebih mudah dibaca, dikelola, dan dikembangkan tanpa harus menempatkan seluruh tampilan dalam satu file.
 
 ## Alur Navigasi
 
 ```text
 Beranda
-├── Pilih kategori / Cari / Lihat semua → Daftar Game
-│                                      └── Pilih game → Detail Game
-└── Pilih game populer atau terbaru ─────────────────→ Detail Game
+├── Pilih kategori / Cari / Jelajahi semua → Daftar Resep (Jelajahi)
+│                                           └── Pilih resep → Detail Resep
+├── Pilih resep populer atau pilihan hari ini ─────────────→ Detail Resep
+└── Navigasi bawah → Favorit
+                     └── Pilih resep ──────────────────────→ Detail Resep
 ```
 
-Navigasi antarhalaman menggunakan `Navigator.push()` untuk membuka halaman baru dan `Navigator.pop()` untuk kembali. Game yang dipilih dikirim sebagai objek `Game` ke halaman detail sehingga informasi yang ditampilkan sesuai dengan pilihan pengguna.
+Navigasi antartab Beranda, Jelajahi, dan Favorit menggunakan `NavigationBar` bersama `IndexedStack`. Halaman detail dibuka menggunakan `Navigator.push()` melalui `MaterialPageRoute`, sedangkan tombol kembali pada `AppBar` mengembalikan pengguna ke halaman sebelumnya. Resep yang dipilih dikirim sebagai objek `Recipe` agar informasi pada halaman detail sesuai dengan pilihan pengguna.
 
 ## Pengelolaan Data
 
-Data game berada di `assets/data/games.json`. Setiap game memiliki informasi seperti `id`, `title`, `genre`, `releaseDate`, `description`, `coverUrl`, `rating`, `platforms`, dan `requirements`.
+Data resep berada di `assets/data/recipes.json` dan berisi **19 resep contoh** dalam enam kategori: Sarapan, Makanan Utama, Sayuran, Camilan, Minuman, dan Pencuci Mulut.
 
-Data dibaca oleh `LocalGameRepository` pada `lib/data/game_repository.dart`, kemudian diubah menjadi objek `Game` melalui `Game.fromJson()` pada `lib/models/game.dart`. Pemisahan model dan repository ini memudahkan perubahan sumber data dari file JSON lokal menjadi API pada pengembangan berikutnya.
+Setiap resep memiliki informasi seperti `id`, `title`, `category`, `description`, `emoji`, `colorHex`, `durationMinutes`, `servings`, `difficulty`, `rating`, `ingredients`, `steps`, `tips`, `isPopular`, dan `isFeatured`.
 
-Judul game dan gambar cover mengacu pada game yang tersedia di Steam. Gambar ditampilkan menggunakan `Image.network()` dari alamat yang tersimpan pada `coverUrl`, sehingga membutuhkan koneksi internet. **Nilai rating, popularitas, dan spesifikasi minimum dalam aplikasi masih berupa data contoh**, bukan data resmi dari Steam.
+Data dibaca oleh `RecipeRepository` pada `lib/data/recipe_repository.dart`, kemudian diubah menjadi objek `Recipe` melalui `Recipe.fromJson()` pada `lib/models/recipe.dart`. Pemisahan model dan repository memudahkan perubahan sumber data dari file JSON lokal menjadi API pada pengembangan berikutnya.
+
+Ilustrasi resep menggunakan emoji makanan dan gradasi warna yang dibuat langsung dengan widget Flutter, sehingga tidak memerlukan koneksi internet. **Resep dan rating pada versi ini merupakan data contoh untuk pembelajaran**, bukan hasil penilaian pengguna sungguhan. Status favorit dan centang bahan juga belum disimpan secara permanen.
 
 ## Widget dan Tampilan
 
-Antarmuka dibangun menggunakan widget Flutter seperti `Scaffold`, `Column`, `Row`, `Stack`, `ListView`, `CustomScrollView`, `TextField`, dan `InkWell`. Komponen kartu game dibuat terpisah agar tampilan lebih konsisten.
+Antarmuka dibuat menggunakan widget Flutter seperti `Scaffold`, `Column`, `Row`, `Stack`, `ListView`, `GridView`, `SingleChildScrollView`, `TextField`, `ChoiceChip`, `DropdownButton`, `InkWell`, `CheckboxListTile`, dan `SliverAppBar`. Kartu resep, ilustrasi masakan, dan tombol favorit dibuat sebagai komponen terpisah agar tampilan lebih konsisten.
 
-Warna utama aplikasi disimpan di `lib/core/app_colors.dart`. Pada beberapa halaman digunakan `ConstrainedBox` untuk membatasi lebar konten sehingga tetap nyaman dilihat pada ukuran layar yang berbeda.
+Warna utama aplikasi disimpan di `lib/theme/app_palette.dart`. Desain menggunakan warna terracotta, krem, dan aksen pastel untuk memberikan kesan hangat dan sesuai dengan tema memasak. `ConstrainedBox` dan `LayoutBuilder` digunakan pada beberapa halaman untuk menyesuaikan lebar konten dan jumlah kolom resep pada ukuran layar yang berbeda.
 
 Rancangan awal antarmuka dan catatan navigasi dapat dilihat pada folder `docs`.
 
 ## Menjalankan Aplikasi
 
-Pastikan Flutter SDK, Android Studio, dan emulator atau perangkat Android sudah disiapkan. Dari terminal pada direktori proyek, jalankan:
+Pastikan Flutter SDK, Android Studio, plugin Flutter dan Dart, serta emulator atau perangkat Android sudah disiapkan. Buka folder `teman_memasak_flutter` melalui Android Studio.
+
+Dari terminal pada direktori proyek, jalankan:
 
 ```bash
 flutter pub get
@@ -91,14 +105,14 @@ flutter run
 Apabila folder platform `android/` belum tersedia, buat terlebih dahulu dengan:
 
 ```bash
-flutter create --platforms=android .
+flutter create --platforms=android --project-name teman_memasak .
+flutter pub get
+flutter run
 ```
 
-Karena gambar cover diambil melalui internet, pastikan konfigurasi Android memiliki izin berikut di `android/app/src/main/AndroidManifest.xml`:
+Khusus pengguna Windows, tersedia `setup_windows.bat` untuk membuat folder Android (jika belum ada), mengatur nama aplikasi menjadi **Teman Memasak**, dan menjalankan `flutter pub get`. Pada Linux atau macOS, tersedia `setup_linux_mac.sh` untuk persiapan serupa.
 
-```xml
-<uses-permission android:name="android.permission.INTERNET" />
-```
+Aplikasi menggunakan data dan ilustrasi lokal, sehingga tidak memerlukan izin internet khusus untuk menampilkan resep. Folder `android/` tidak disertakan dalam paket awal dan akan dibuat sesuai versi Flutter SDK yang terpasang pada komputer pengguna.
 
 ## Pengujian
 
@@ -109,8 +123,10 @@ flutter analyze
 flutter test
 ```
 
-File `test/game_model_test.dart` digunakan untuk mengecek pembacaan data JSON ke objek `Game`, termasuk judul, genre, tanggal rilis, alamat cover, dan informasi spesifikasi. Tampilan dan navigasi antarhalaman juga perlu diperiksa langsung melalui emulator.
+File `test/recipe_model_test.dart` digunakan untuk mengecek konversi data JSON contoh menjadi objek `Recipe`, termasuk judul, waktu memasak, bahan, dan langkah memasak. Pencarian, filter kategori, navigasi antartab, daftar favorit, dan tampilan responsif juga perlu diperiksa langsung melalui emulator atau perangkat Android.
+
+**Status pengujian:** struktur kode dan data telah diperiksa secara statis, tetapi aplikasi belum diuji build atau dijalankan pada emulator di lingkungan pembuatan proyek karena Flutter SDK dan emulator tidak tersedia.
 
 ## Rencana Pengembangan
 
-Saat ini aplikasi berfokus pada desain antarmuka, pengolahan data lokal, dan navigasi. Pengembangan berikutnya direncanakan berupa pengambilan data melalui API sehingga daftar game tidak perlu diperbarui secara manual di file JSON.
+Saat ini aplikasi berfokus pada desain antarmuka, pengolahan data resep lokal, dan navigasi antarhalaman. Pengembangan berikutnya direncanakan berupa pengambilan data resep melalui API agar informasi dapat diperbarui dari server, penambahan foto masakan, serta penyimpanan favorit secara permanen.

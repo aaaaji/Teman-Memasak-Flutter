@@ -1,7 +1,7 @@
-name: gameatlas
-version: 1.0.0+1
-description: Aplikasi katalog game Flutter untuk tugas Mobile Programming. Data JSON lokal dan gambar cover Steam online.
+name: teman_memasak
+description: Aplikasi katalog resep masakan offline untuk tugas Mobile Programming.
 publish_to: 'none'
+version: 1.0.0+1
 
 environment:
   sdk: '>=3.3.0 <4.0.0'
@@ -13,9 +13,8 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^4.0.0
 
 flutter:
   uses-material-design: true
   assets:
-    - assets/data/games.json
+    - assets/data/recipes.json

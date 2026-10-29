@@ -1,230 +1,190 @@
 import 'package:flutter/material.dart';
-import '../core/app_colors.dart';
-import '../models/game.dart';
-import '../widgets/game_cover.dart';
-import '../widgets/game_list_tile.dart';
-import '../widgets/section_heading.dart';
-import 'game_detail_screen.dart';
-import 'game_list_screen.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({required this.games, super.key});
+import '../data/recipe_categories.dart';
+import '../models/recipe.dart';
+import '../theme/app_palette.dart';
+import '../widgets/recipe_widgets.dart';
 
-  final List<Game> games;
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({
+    super.key,
+    required this.recipes,
+    required this.favorites,
+    required this.onFavoriteToggle,
+    required this.onRecipeTap,
+    required this.onExplore,
+  });
 
-  @override
-  State<HomeScreen> createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
-  final TextEditingController _searchController = TextEditingController();
-
-  static const categories = <({String name, IconData icon, Color color})>[
-    (name: 'Shooter', icon: Icons.gps_fixed_rounded, color: Color(0xFFDE9D32)),
-    (name: 'Balap', icon: Icons.sports_motorsports_rounded, color: Color(0xFFCF7C70)),
-    (name: 'Strategi', icon: Icons.extension_rounded, color: Color(0xFF8A80C9)),
-    (name: 'Sport', icon: Icons.sports_basketball_rounded, color: Color(0xFF69A4A1)),
-    (name: 'RPG', icon: Icons.auto_awesome_rounded, color: Color(0xFF638CC4)),
-  ];
-
-  @override
-  void dispose() {
-    _searchController.dispose();
-    super.dispose();
-  }
-
-  void _openList({String? category, String query = ''}) {
-    Navigator.push<void>(
-      context,
-      MaterialPageRoute(
-        builder: (_) => GameListScreen(
-          games: widget.games,
-          initialCategory: category,
-          initialQuery: query,
-        ),
-      ),
-    );
-  }
-
-  void _openDetail(Game game) {
-    Navigator.push<void>(
-      context,
-      MaterialPageRoute(builder: (_) => GameDetailScreen(game: game)),
-    );
-  }
+  final List<Recipe> recipes;
+  final ValueNotifier<Set<String>> favorites;
+  final ValueChanged<String> onFavoriteToggle;
+  final ValueChanged<Recipe> onRecipeTap;
+  final void Function(String category, String query) onExplore;
 
   @override
   Widget build(BuildContext context) {
-    final popular = [...widget.games]
-      ..sort((a, b) => b.popularity.compareTo(a.popularity));
-    final latest = [...widget.games]
-      ..sort((a, b) => b.releaseDate.compareTo(a.releaseDate));
-    final featured = popular.where((g) => g.featured).toList();
+    final popular = recipes.where((recipe) => recipe.isPopular).take(7).toList();
+    final featured = recipes.where((recipe) => recipe.isFeatured).toList();
+    final today = featured.isNotEmpty ? featured.first : recipes.first;
 
-    return Scaffold(
-      body: SafeArea(
+    return SafeArea(
+      child: SingleChildScrollView(
+        padding: const EdgeInsets.fromLTRB(0, 16, 0, 28),
         child: Center(
           child: ConstrainedBox(
-            constraints: const BoxConstraints(maxWidth: 760),
-            child: CustomScrollView(
-              slivers: [
-                SliverToBoxAdapter(child: _buildHeader()),
-                SliverToBoxAdapter(
-                  child: Padding(
-                    padding: const EdgeInsets.fromLTRB(20, 24, 0, 0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const Text(
-                          'Jelajahi kategori',
-                          style: TextStyle(
-                            fontSize: 19, fontWeight: FontWeight.w900,
-                            color: AppColors.ink,
-                          ),
+            constraints: const BoxConstraints(maxWidth: 1050),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  child: Row(
+                    children: [
+                      Container(
+                        width: 47,
+                        height: 47,
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                          color: AppPalette.peach,
+                          borderRadius: BorderRadius.circular(16),
                         ),
-                        const SizedBox(height: 16),
-                        SizedBox(
-                          height: 99,
-                          child: ListView.separated(
-                            scrollDirection: Axis.horizontal,
-                            itemCount: categories.length,
-                            padding: const EdgeInsets.only(right: 20),
-                            separatorBuilder: (_, __) =>
-                                const SizedBox(width: 15),
-                            itemBuilder: (context, index) {
-                              final c = categories[index];
-                              return InkWell(
-                                onTap: () => _openList(category: c.name),
-                                borderRadius: BorderRadius.circular(17),
-                                child: SizedBox(
-                                  width: 67,
-                                  child: Column(
-                                    children: [
-                                      Container(
-                                        width: 61,
-                                        height: 61,
-                                        decoration: BoxDecoration(
-                                          color: c.color,
-                                          borderRadius: BorderRadius.circular(19),
-                                        ),
-                                        child: Icon(c.icon,
-                                            color: Colors.white, size: 30),
-                                      ),
-                                      const SizedBox(height: 9),
-                                      Text(c.name,
-                                          style: const TextStyle(
-                                            fontSize: 12,
-                                            fontWeight: FontWeight.w700,
-                                            color: AppColors.ink,
-                                          )),
-                                    ],
-                                  ),
-                                ),
-                              );
-                            },
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                SliverToBoxAdapter(
-                  child: Padding(
-                    padding: const EdgeInsets.fromLTRB(20, 23, 20, 13),
-                    child: SectionHeading(
-                      title: 'Game populer',
-                      actionLabel: 'Lihat semua',
-                      onAction: () => _openList(),
-                    ),
-                  ),
-                ),
-                SliverToBoxAdapter(
-                  child: SizedBox(
-                    height: 210,
-                    child: ListView.separated(
-                      padding: const EdgeInsets.symmetric(horizontal: 20),
-                      scrollDirection: Axis.horizontal,
-                      itemCount: featured.length,
-                      separatorBuilder: (_, __) => const SizedBox(width: 13),
-                      itemBuilder: (context, index) {
-                        final game = featured[index];
-                        return SizedBox(
-                          width: 230,
-                          child: Material(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(21),
-                            child: InkWell(
-                              borderRadius: BorderRadius.circular(21),
-                              onTap: () => _openDetail(game),
-                              child: Padding(
-                                padding: const EdgeInsets.all(7),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    GameCover(game: game, height: 135),
-                                    Padding(
-                                      padding: const EdgeInsets.fromLTRB(7, 9, 7, 0),
-                                      child: Row(
-                                        children: [
-                                          Expanded(
-                                            child: Text(
-                                              game.title,
-                                              maxLines: 1,
-                                              overflow: TextOverflow.ellipsis,
-                                              style: const TextStyle(
-                                                fontWeight: FontWeight.w800,
-                                                color: AppColors.ink,
-                                              ),
-                                            ),
-                                          ),
-                                          const Icon(Icons.star_rounded,
-                                              size: 16, color: AppColors.yellow),
-                                          Text(game.rating.toStringAsFixed(1),
-                                              style: const TextStyle(
-                                                fontSize: 12,
-                                                fontWeight: FontWeight.w800,
-                                              )),
-                                        ],
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.only(left: 7, top: 1),
-                                      child: Text(
-                                        game.genre,
-                                        style: const TextStyle(
-                                          color: AppColors.muted, fontSize: 12,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
+                        child: const Text('👩‍🍳', style: TextStyle(fontSize: 27)),
+                      ),
+                      const SizedBox(width: 11),
+                      const Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text('Halo, Chef! 👋', style: TextStyle(fontSize: 12, color: AppPalette.muted)),
+                            SizedBox(height: 2),
+                            Text(
+                              'Teman Memasak',
+                              style: TextStyle(fontSize: 21, fontWeight: FontWeight.w900, color: AppPalette.ink),
                             ),
+                          ],
+                        ),
+                      ),
+                      Container(
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          border: Border.all(color: AppPalette.line),
+                          borderRadius: BorderRadius.circular(14),
+                        ),
+                        child: IconButton(
+                          tooltip: 'Cari resep',
+                          onPressed: () => onExplore('Semua', ''),
+                          icon: const Icon(Icons.search_rounded, color: AppPalette.ink),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(height: 23),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  child: _WelcomeBanner(onExplore: () => onExplore('Semua', '')),
+                ),
+                const SizedBox(height: 28),
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20),
+                  child: SectionHeading(
+                    title: 'Mau masak apa?',
+                    subtitle: 'Cari inspirasi sesuai seleramu',
+                  ),
+                ),
+                const SizedBox(height: 14),
+                SizedBox(
+                  height: 115,
+                  child: ListView.separated(
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    scrollDirection: Axis.horizontal,
+                    itemCount: recipeCategories.length,
+                    separatorBuilder: (_, __) => const SizedBox(width: 10),
+                    itemBuilder: (context, index) {
+                      final category = recipeCategories[index];
+                      return InkWell(
+                        borderRadius: BorderRadius.circular(19),
+                        onTap: () => onExplore(category.name, ''),
+                        child: Container(
+                          width: 105,
+                          padding: const EdgeInsets.fromLTRB(8, 12, 8, 10),
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            border: Border.all(color: AppPalette.line),
+                            borderRadius: BorderRadius.circular(19),
                           ),
-                        );
-                      },
+                          child: Column(
+                            children: [
+                              Container(
+                                width: 57,
+                                height: 57,
+                                alignment: Alignment.center,
+                                decoration: BoxDecoration(color: category.color, shape: BoxShape.circle),
+                                child: Text(category.emoji, style: const TextStyle(fontSize: 30)),
+                              ),
+                              const SizedBox(height: 8),
+                              Text(
+                                category.name,
+                                textAlign: TextAlign.center,
+                                maxLines: 1,
+                                overflow: TextOverflow.ellipsis,
+                                style: const TextStyle(fontSize: 11, fontWeight: FontWeight.w700),
+                              ),
+                            ],
+                          ),
+                        ),
+                      );
+                    },
+                  ),
+                ),
+                const SizedBox(height: 27),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  child: SectionHeading(
+                    title: 'Resep populer 🔥',
+                    subtitle: 'Ide favorit untuk masak hari ini',
+                    onSeeAll: () => onExplore('Semua', ''),
+                  ),
+                ),
+                const SizedBox(height: 14),
+                SizedBox(
+                  height: 264,
+                  child: ListView.separated(
+                    scrollDirection: Axis.horizontal,
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    itemCount: popular.length,
+                    separatorBuilder: (_, __) => const SizedBox(width: 13),
+                    itemBuilder: (context, index) => SizedBox(
+                      width: 202,
+                      child: RecipeTile(
+                        recipe: popular[index],
+                        onTap: () => onRecipeTap(popular[index]),
+                        favorites: favorites,
+                        onFavoriteToggle: onFavoriteToggle,
+                      ),
                     ),
                   ),
                 ),
-                SliverToBoxAdapter(
-                  child: Padding(
-                    padding: const EdgeInsets.fromLTRB(20, 27, 20, 12),
-                    child: SectionHeading(
-                      title: 'Game terbaru',
-                      actionLabel: 'Lihat semua',
-                      onAction: () => _openList(),
-                    ),
+                const SizedBox(height: 27),
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20),
+                  child: SectionHeading(
+                    title: 'Pilihan hari ini ✨',
+                    subtitle: 'Satu resep sederhana untuk dicoba',
                   ),
                 ),
-                SliverPadding(
-                  padding: const EdgeInsets.fromLTRB(20, 0, 20, 28),
-                  sliver: SliverList.separated(
-                    itemCount: latest.take(4).length,
-                    itemBuilder: (context, index) => GameListTile(
-                      game: latest[index],
-                      onTap: () => _openDetail(latest[index]),
-                    ),
-                    separatorBuilder: (_, __) => const SizedBox(height: 12),
+                const SizedBox(height: 14),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  child: _FeaturedRecipe(recipe: today, onTap: () => onRecipeTap(today)),
+                ),
+                const SizedBox(height: 24),
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 22),
+                  child: Text(
+                    'Resep dan rating pada versi ini adalah data contoh untuk pembelajaran.',
+                    style: TextStyle(fontSize: 11, color: AppPalette.muted),
+                    textAlign: TextAlign.center,
                   ),
                 ),
               ],
@@ -234,78 +194,134 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
     );
   }
+}
 
-  Widget _buildHeader() {
+class _WelcomeBanner extends StatelessWidget {
+  const _WelcomeBanner({required this.onExplore});
+
+  final VoidCallback onExplore;
+
+  @override
+  Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.fromLTRB(22, 23, 22, 25),
-      decoration: const BoxDecoration(
-        color: AppColors.navy,
-        borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(29),
-          bottomRight: Radius.circular(29),
+      width: double.infinity,
+      constraints: const BoxConstraints(minHeight: 210),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(26),
+        gradient: const LinearGradient(
+          colors: [Color(0xFFE46A49), Color(0xFFC64E35)],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
         ),
       ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+      clipBehavior: Clip.antiAlias,
+      child: Stack(
         children: [
-          Row(
-            children: [
-              const Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text('Halo, Wahyu',
-                        style: TextStyle(
-                          fontSize: 25, fontWeight: FontWeight.w900,
-                          color: Colors.white,
-                        )),
-                    SizedBox(height: 5),
-                    Text('Mau main game apa hari ini?',
-                        style: TextStyle(color: Color(0xFFC0D3D7), fontSize: 13)),
-                  ],
-                ),
-              ),
-              Container(
-                width: 49,
-                height: 49,
-                decoration: const BoxDecoration(
-                  color: Color(0xFF45BBA2), shape: BoxShape.circle,
-                ),
-                child: const Icon(Icons.sports_esports_rounded,
-                    color: Colors.white, size: 29),
-              ),
-            ],
+          Positioned(
+            right: -38,
+            top: -65,
+            child: Container(
+              width: 230,
+              height: 230,
+              decoration: BoxDecoration(shape: BoxShape.circle, color: Colors.white.withAlpha(26)),
+            ),
           ),
-          const SizedBox(height: 27),
-          TextField(
-            controller: _searchController,
-            onSubmitted: (value) => _openList(query: value.trim()),
-            textInputAction: TextInputAction.search,
-            style: const TextStyle(color: Colors.white),
-            decoration: InputDecoration(
-              hintText: 'Cari judul atau genre game...',
-              hintStyle: const TextStyle(
-                color: Color(0xFFC8D5D8), fontSize: 13,
-              ),
-              filled: true,
-              fillColor: AppColors.navySoft,
-              prefixIcon: const Icon(Icons.search_rounded,
-                  color: AppColors.yellow),
-              suffixIcon: IconButton(
-                tooltip: 'Cari game',
-                onPressed: () => _openList(
-                    query: _searchController.text.trim()),
-                icon: const Icon(Icons.arrow_forward_rounded,
-                    color: AppColors.yellow),
-              ),
-              border: OutlineInputBorder(
-                borderSide: BorderSide.none,
-                borderRadius: BorderRadius.circular(15),
-              ),
-              contentPadding: const EdgeInsets.symmetric(vertical: 15),
+          Positioned(
+            right: 0,
+            bottom: -25,
+            child: Text('🍲', style: TextStyle(fontSize: 132, color: Colors.white.withAlpha(204))),
+          ),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(22, 23, 130, 23),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text('MASAK JADI LEBIH SERU',
+                    style: TextStyle(fontSize: 10, fontWeight: FontWeight.w900, letterSpacing: 1.3, color: Color(0xFFFFE7D8))),
+                const SizedBox(height: 12),
+                const Text(
+                  'Ada ide masak\nuntuk hari ini?',
+                  style: TextStyle(fontSize: 26, height: 1.12, fontWeight: FontWeight.w900, color: Colors.white),
+                ),
+                const SizedBox(height: 11),
+                const Text('Temukan resep enak, mudah, dan praktis.',
+                    style: TextStyle(fontSize: 12, color: Colors.white, height: 1.4)),
+                const SizedBox(height: 15),
+                FilledButton.icon(
+                  style: FilledButton.styleFrom(
+                    backgroundColor: Colors.white,
+                    foregroundColor: AppPalette.primaryDark,
+                    padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
+                    minimumSize: const Size(0, 39),
+                    tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                  ),
+                  onPressed: onExplore,
+                  icon: const Icon(Icons.search_rounded, size: 18),
+                  label: const Text('Cari resep', style: TextStyle(fontWeight: FontWeight.w800, fontSize: 12)),
+                ),
+              ],
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+class _FeaturedRecipe extends StatelessWidget {
+  const _FeaturedRecipe({required this.recipe, required this.onTap});
+  final Recipe recipe;
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    return Material(
+      color: Colors.white,
+      borderRadius: BorderRadius.circular(22),
+      clipBehavior: Clip.antiAlias,
+      child: InkWell(
+        onTap: onTap,
+        child: Container(
+          decoration: BoxDecoration(
+            border: Border.all(color: AppPalette.line),
+            borderRadius: BorderRadius.circular(22),
+          ),
+          padding: const EdgeInsets.all(12),
+          child: Row(
+            children: [
+              SizedBox(
+                width: 123,
+                child: RecipeArtwork(recipe: recipe, height: 128, emojiSize: 52, borderRadius: 17),
+              ),
+              const SizedBox(width: 14),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(recipe.category.toUpperCase(),
+                        style: const TextStyle(fontSize: 10, fontWeight: FontWeight.w900, color: AppPalette.primary)),
+                    const SizedBox(height: 7),
+                    Text(recipe.title,
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                        style: const TextStyle(fontSize: 17, height: 1.15, fontWeight: FontWeight.w900)),
+                    const SizedBox(height: 8),
+                    Text('${recipe.durationMinutes} menit  •  ${recipe.difficulty}',
+                        style: const TextStyle(fontSize: 12, color: AppPalette.muted)),
+                    const SizedBox(height: 12),
+                    const Row(
+                      children: [
+                        Text('Lihat resep',
+                            style: TextStyle(fontWeight: FontWeight.w800, color: AppPalette.primary, fontSize: 12)),
+                        Icon(Icons.arrow_forward_rounded, color: AppPalette.primary, size: 16),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }

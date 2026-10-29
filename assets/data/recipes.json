@@ -1,0 +1,583 @@
+[
+  {
+    "id": "nasi-goreng",
+    "title": "Nasi Goreng Kampung",
+    "category": "Makanan Utama",
+    "description": "Nasi goreng rumahan dengan bawang, kecap, dan telur. Cocok untuk menu praktis sehari-hari.",
+    "emoji": "🍛",
+    "colorHex": "#FAD6A8",
+    "durationMinutes": 20,
+    "servings": 2,
+    "difficulty": "Mudah",
+    "rating": 4.9,
+    "ingredients": [
+      "2 piring nasi putih dingin",
+      "2 butir telur",
+      "3 siung bawang merah, iris",
+      "2 siung bawang putih, cincang",
+      "2 sdm kecap manis",
+      "1 batang daun bawang, iris",
+      "2 sdm minyak goreng",
+      "Garam dan merica secukupnya"
+    ],
+    "steps": [
+      "Panaskan 1 sdm minyak, orak-arik telur hingga matang lalu sisihkan.",
+      "Tambahkan sisa minyak. Tumis bawang merah dan bawang putih hingga harum.",
+      "Masukkan nasi dingin, aduk dan pisahkan gumpalannya.",
+      "Tambahkan telur, kecap, garam, dan merica. Aduk sampai merata dan panas menyeluruh.",
+      "Masukkan daun bawang, aduk sebentar lalu sajikan."
+    ],
+    "tips": "Gunakan nasi yang sudah dingin agar tekstur lebih terpisah.",
+    "isPopular": true,
+    "isFeatured": true
+  },
+  {
+    "id": "ayam-kecap",
+    "title": "Ayam Kecap Rumahan",
+    "category": "Makanan Utama",
+    "description": "Ayam dengan bumbu kecap gurih manis dan kuah yang meresap.",
+    "emoji": "🍗",
+    "colorHex": "#F6C9B3",
+    "durationMinutes": 40,
+    "servings": 3,
+    "difficulty": "Sedang",
+    "rating": 4.8,
+    "ingredients": [
+      "500 g ayam potong",
+      "4 sdm kecap manis",
+      "3 siung bawang putih, cincang",
+      "4 siung bawang merah, iris",
+      "1 ruas jahe, memarkan",
+      "150 ml air",
+      "1 sdm minyak",
+      "Garam dan lada secukupnya"
+    ],
+    "steps": [
+      "Cuci tangan dan siapkan bahan dengan talenan terpisah untuk ayam mentah.",
+      "Panaskan minyak dan tumis bawang serta jahe hingga wangi.",
+      "Masukkan ayam, aduk sampai permukaan berubah warna.",
+      "Tuang air dan kecap, bumbui garam serta lada.",
+      "Masak dengan api sedang sampai ayam matang sepenuhnya dan bumbu mengental."
+    ],
+    "tips": "Pastikan bagian terdalam ayam matang sempurna sebelum disajikan.",
+    "isPopular": true,
+    "isFeatured": false
+  },
+  {
+    "id": "sop-sayur",
+    "title": "Sop Sayur Bening",
+    "category": "Sayuran",
+    "description": "Kuah bening dengan wortel, kentang, kubis, dan daun bawang.",
+    "emoji": "🥣",
+    "colorHex": "#DDE8C6",
+    "durationMinutes": 30,
+    "servings": 4,
+    "difficulty": "Mudah",
+    "rating": 4.7,
+    "ingredients": [
+      "2 wortel, potong",
+      "2 kentang kecil, potong",
+      "100 g kubis, iris",
+      "1 batang daun bawang",
+      "2 siung bawang putih, geprek",
+      "700 ml air",
+      "Garam dan merica secukupnya"
+    ],
+    "steps": [
+      "Didihkan air bersama bawang putih.",
+      "Masukkan kentang dan wortel, rebus hingga mulai empuk.",
+      "Tambahkan kubis, masak sampai sayuran matang.",
+      "Beri garam, merica, dan daun bawang.",
+      "Koreksi rasa lalu sajikan selagi hangat."
+    ],
+    "tips": "Masukkan sayur yang cepat matang belakangan supaya tidak terlalu lembek.",
+    "isPopular": true,
+    "isFeatured": false
+  },
+  {
+    "id": "telur-balado",
+    "title": "Telur Balado Sederhana",
+    "category": "Makanan Utama",
+    "description": "Telur rebus yang dibalut sambal tomat pedas gurih.",
+    "emoji": "🥚",
+    "colorHex": "#FFCCB7",
+    "durationMinutes": 30,
+    "servings": 3,
+    "difficulty": "Sedang",
+    "rating": 4.8,
+    "ingredients": [
+      "4 butir telur",
+      "3 cabai merah besar",
+      "3 siung bawang merah",
+      "2 siung bawang putih",
+      "1 tomat kecil",
+      "2 sdm minyak",
+      "Garam dan gula secukupnya"
+    ],
+    "steps": [
+      "Rebus telur hingga matang, kupas kulitnya.",
+      "Haluskan cabai, bawang, dan tomat.",
+      "Tumis bumbu halus dengan minyak sampai matang dan harum.",
+      "Tambahkan garam dan sedikit gula, lalu masukkan telur.",
+      "Aduk pelan hingga telur terbalut bumbu."
+    ],
+    "tips": "Sesuaikan jumlah cabai dengan selera.",
+    "isPopular": true,
+    "isFeatured": false
+  },
+  {
+    "id": "tumis-kangkung",
+    "title": "Tumis Kangkung Bawang Putih",
+    "category": "Sayuran",
+    "description": "Tumis kangkung cepat dengan aroma bawang putih yang sedap.",
+    "emoji": "🥬",
+    "colorHex": "#CAE5BD",
+    "durationMinutes": 15,
+    "servings": 2,
+    "difficulty": "Mudah",
+    "rating": 4.8,
+    "ingredients": [
+      "1 ikat kangkung, petik dan cuci bersih",
+      "3 siung bawang putih, iris",
+      "2 siung bawang merah, iris",
+      "1 sdm saus tiram",
+      "50 ml air",
+      "1 sdm minyak",
+      "Garam secukupnya"
+    ],
+    "steps": [
+      "Panaskan minyak, tumis bawang hingga harum.",
+      "Masukkan kangkung dan aduk dengan api sedang-besar.",
+      "Tambahkan saus tiram dan sedikit air.",
+      "Masak sebentar hingga kangkung matang namun tetap hijau.",
+      "Koreksi rasa dan hidangkan segera."
+    ],
+    "tips": "Jangan menumis terlalu lama agar teksturnya tidak lembek.",
+    "isPopular": true,
+    "isFeatured": true
+  },
+  {
+    "id": "tempe-orek",
+    "title": "Orek Tempe Manis Gurih",
+    "category": "Makanan Utama",
+    "description": "Potongan tempe berbumbu kecap, cocok sebagai lauk nasi.",
+    "emoji": "🍱",
+    "colorHex": "#F0D0AA",
+    "durationMinutes": 25,
+    "servings": 3,
+    "difficulty": "Mudah",
+    "rating": 4.6,
+    "ingredients": [
+      "1 papan tempe, potong korek",
+      "3 siung bawang merah",
+      "2 siung bawang putih",
+      "2 sdm kecap manis",
+      "1 sdm gula merah sisir",
+      "3 sdm air",
+      "Minyak secukupnya"
+    ],
+    "steps": [
+      "Goreng tempe sampai keemasan, tiriskan.",
+      "Tumis irisan bawang merah dan bawang putih hingga harum.",
+      "Tambahkan kecap, gula merah, dan air; aduk rata.",
+      "Masukkan tempe lalu aduk hingga bumbu melapisi seluruh permukaan.",
+      "Angkat saat bumbu mulai mengental."
+    ],
+    "tips": "Gunakan api kecil saat memasukkan kecap agar tidak mudah gosong.",
+    "isPopular": false,
+    "isFeatured": false
+  },
+  {
+    "id": "mie-goreng",
+    "title": "Mie Goreng Jawa",
+    "category": "Makanan Utama",
+    "description": "Mie goreng berbumbu rumahan dengan sayuran dan telur.",
+    "emoji": "🍜",
+    "colorHex": "#F8D69E",
+    "durationMinutes": 25,
+    "servings": 2,
+    "difficulty": "Mudah",
+    "rating": 4.7,
+    "ingredients": [
+      "2 keping mie telur kering",
+      "1 butir telur",
+      "1 genggam sawi hijau",
+      "1/2 wortel, iris tipis",
+      "2 siung bawang putih",
+      "2 sdm kecap manis",
+      "1 sdm minyak",
+      "Garam dan lada secukupnya"
+    ],
+    "steps": [
+      "Rebus mie sesuai petunjuk kemasan, tiriskan.",
+      "Tumis bawang putih dalam minyak panas.",
+      "Tambahkan telur lalu orak-arik sampai matang.",
+      "Masukkan wortel dan sawi, aduk hingga matang.",
+      "Masukkan mie, kecap, garam, dan lada; aduk sampai bumbu merata."
+    ],
+    "tips": "Tiriskan mie dengan baik agar hasilnya tidak berair.",
+    "isPopular": false,
+    "isFeatured": false
+  },
+  {
+    "id": "capcay",
+    "title": "Capcay Sayur Kuah",
+    "category": "Sayuran",
+    "description": "Campuran sayuran berwarna-warni dalam kuah gurih ringan.",
+    "emoji": "🥦",
+    "colorHex": "#D7ECCD",
+    "durationMinutes": 30,
+    "servings": 3,
+    "difficulty": "Sedang",
+    "rating": 4.7,
+    "ingredients": [
+      "1 wortel, iris",
+      "1 bonggol kecil brokoli",
+      "100 g kembang kol",
+      "4 lembar sawi putih",
+      "2 siung bawang putih",
+      "250 ml air",
+      "1 sdm saus tiram",
+      "1 sdt tepung maizena dilarutkan air"
+    ],
+    "steps": [
+      "Cuci dan potong seluruh sayuran.",
+      "Tumis bawang putih hingga harum.",
+      "Masukkan wortel dan kembang kol bersama air; masak hingga hampir empuk.",
+      "Tambahkan brokoli, sawi, dan saus tiram; masak sampai sayuran matang.",
+      "Masukkan larutan maizena sedikit demi sedikit hingga kuah mengental."
+    ],
+    "tips": "Sesuaikan kekentalan kuah dengan jumlah larutan maizena.",
+    "isPopular": false,
+    "isFeatured": false
+  },
+  {
+    "id": "bubur-ayam",
+    "title": "Bubur Ayam Praktis",
+    "category": "Sarapan",
+    "description": "Bubur nasi lembut dengan suwiran ayam dan taburan daun bawang.",
+    "emoji": "🥣",
+    "colorHex": "#FBE0BC",
+    "durationMinutes": 35,
+    "servings": 2,
+    "difficulty": "Mudah",
+    "rating": 4.8,
+    "ingredients": [
+      "1 mangkuk nasi putih",
+      "500 ml air atau kaldu",
+      "100 g ayam matang, suwir",
+      "1 siung bawang putih, haluskan",
+      "1 batang daun bawang",
+      "Garam dan merica secukupnya"
+    ],
+    "steps": [
+      "Masukkan nasi, air, dan bawang putih ke dalam panci.",
+      "Masak dengan api kecil sambil sesekali diaduk hingga nasi menjadi bubur.",
+      "Tambahkan garam dan merica secukupnya.",
+      "Sajikan bubur dalam mangkuk, beri suwiran ayam matang.",
+      "Taburi daun bawang sebelum dinikmati."
+    ],
+    "tips": "Tambahkan air sedikit-sedikit bila bubur terlalu kental.",
+    "isPopular": true,
+    "isFeatured": false
+  },
+  {
+    "id": "roti-telur",
+    "title": "Roti Telur Keju",
+    "category": "Sarapan",
+    "description": "Roti panggang isi telur dan keju untuk sarapan cepat.",
+    "emoji": "🥪",
+    "colorHex": "#F5DEB4",
+    "durationMinutes": 15,
+    "servings": 1,
+    "difficulty": "Mudah",
+    "rating": 4.6,
+    "ingredients": [
+      "2 lembar roti tawar",
+      "1 butir telur",
+      "1 lembar keju",
+      "1 sdt mentega",
+      "Sejumput garam dan lada"
+    ],
+    "steps": [
+      "Kocok telur bersama garam dan lada.",
+      "Lelehkan mentega di wajan anti lengket.",
+      "Masak telur sampai matang.",
+      "Letakkan telur dan keju di antara dua roti.",
+      "Panggang kedua sisi roti hingga keemasan lalu sajikan."
+    ],
+    "tips": "Tambahkan irisan tomat untuk rasa lebih segar.",
+    "isPopular": false,
+    "isFeatured": false
+  },
+  {
+    "id": "omelet-sayur",
+    "title": "Omelet Sayur",
+    "category": "Sarapan",
+    "description": "Telur dadar tebal dengan wortel dan daun bawang.",
+    "emoji": "🍳",
+    "colorHex": "#FFD9A2",
+    "durationMinutes": 15,
+    "servings": 2,
+    "difficulty": "Mudah",
+    "rating": 4.7,
+    "ingredients": [
+      "3 butir telur",
+      "1/2 wortel, parut",
+      "1 batang daun bawang, iris",
+      "1 sdm susu cair (opsional)",
+      "1 sdm minyak",
+      "Garam dan lada secukupnya"
+    ],
+    "steps": [
+      "Kocok telur bersama garam, lada, dan susu bila digunakan.",
+      "Masukkan wortel serta daun bawang, aduk rata.",
+      "Panaskan sedikit minyak di wajan.",
+      "Tuang adonan dan masak api kecil hingga bagian bawah mengeras.",
+      "Balik hati-hati dan masak sampai telur matang sempurna."
+    ],
+    "tips": "Gunakan wajan anti lengket agar omelet mudah dibalik.",
+    "isPopular": false,
+    "isFeatured": false
+  },
+  {
+    "id": "pisang-goreng",
+    "title": "Pisang Goreng Renyah",
+    "category": "Camilan",
+    "description": "Pisang manis dengan balutan tepung renyah untuk teman minum teh.",
+    "emoji": "🍌",
+    "colorHex": "#FFE2AA",
+    "durationMinutes": 25,
+    "servings": 3,
+    "difficulty": "Mudah",
+    "rating": 4.9,
+    "ingredients": [
+      "5 buah pisang kepok matang",
+      "100 g tepung terigu",
+      "2 sdm tepung beras",
+      "1 sdm gula",
+      "120 ml air (sesuaikan)",
+      "Sejumput garam",
+      "Minyak untuk menggoreng"
+    ],
+    "steps": [
+      "Campur tepung terigu, tepung beras, gula, dan garam.",
+      "Tuang air sedikit demi sedikit sampai adonan cukup kental untuk melapisi pisang.",
+      "Kupas dan belah pisang sesuai selera.",
+      "Celupkan pisang ke adonan lalu goreng dalam minyak panas.",
+      "Balik sampai keemasan, angkat dan tiriskan."
+    ],
+    "tips": "Goreng bertahap agar suhu minyak tetap stabil.",
+    "isPopular": true,
+    "isFeatured": true
+  },
+  {
+    "id": "bakwan-jagung",
+    "title": "Bakwan Jagung",
+    "category": "Camilan",
+    "description": "Gorengan jagung gurih yang cocok dinikmati hangat.",
+    "emoji": "🌽",
+    "colorHex": "#F9DCA6",
+    "durationMinutes": 25,
+    "servings": 4,
+    "difficulty": "Mudah",
+    "rating": 4.7,
+    "ingredients": [
+      "2 tongkol jagung manis, pipil",
+      "100 g tepung terigu",
+      "1 butir telur",
+      "2 siung bawang putih, haluskan",
+      "2 batang daun bawang",
+      "100 ml air (sesuaikan)",
+      "Garam dan lada secukupnya",
+      "Minyak goreng"
+    ],
+    "steps": [
+      "Campur jagung, tepung, telur, bawang, dan daun bawang.",
+      "Masukkan air sedikit demi sedikit sampai adonan dapat disendok.",
+      "Beri garam dan lada, aduk rata.",
+      "Panaskan minyak lalu tuang adonan sesendok demi sesendok.",
+      "Goreng sampai kedua sisi matang dan kecokelatan."
+    ],
+    "tips": "Jangan membuat adonan terlalu encer agar bakwan tidak melebar.",
+    "isPopular": true,
+    "isFeatured": false
+  },
+  {
+    "id": "kentang-keju",
+    "title": "Bola Kentang Keju",
+    "category": "Camilan",
+    "description": "Camilan kentang lembut dengan isian keju.",
+    "emoji": "🧀",
+    "colorHex": "#F7DCC4",
+    "durationMinutes": 35,
+    "servings": 3,
+    "difficulty": "Sedang",
+    "rating": 4.6,
+    "ingredients": [
+      "300 g kentang, kupas",
+      "60 g keju potong dadu",
+      "2 sdm tepung maizena",
+      "1 butir telur, kocok",
+      "70 g tepung panir",
+      "Garam dan lada secukupnya",
+      "Minyak untuk menggoreng"
+    ],
+    "steps": [
+      "Rebus atau kukus kentang hingga empuk, lalu haluskan.",
+      "Campur kentang dengan maizena, garam, dan lada.",
+      "Ambil sedikit adonan, isi keju, kemudian bentuk bulat.",
+      "Celupkan ke telur dan gulingkan pada tepung panir.",
+      "Goreng sampai kecokelatan dan bagian dalam panas menyeluruh."
+    ],
+    "tips": "Dinginkan adonan kentang sebentar bila terlalu lembek untuk dibentuk.",
+    "isPopular": false,
+    "isFeatured": false
+  },
+  {
+    "id": "es-jeruk",
+    "title": "Es Jeruk Segar",
+    "category": "Minuman",
+    "description": "Minuman jeruk segar yang mudah dibuat di rumah.",
+    "emoji": "🍊",
+    "colorHex": "#FFE2AF",
+    "durationMinutes": 10,
+    "servings": 2,
+    "difficulty": "Mudah",
+    "rating": 4.8,
+    "ingredients": [
+      "3 buah jeruk peras",
+      "300 ml air dingin",
+      "1-2 sdm gula cair (opsional)",
+      "Es batu secukupnya"
+    ],
+    "steps": [
+      "Belah jeruk dan peras sarinya.",
+      "Saring biji bila perlu.",
+      "Campurkan air dingin dan gula cair sesuai selera.",
+      "Masukkan es batu ke gelas.",
+      "Tuang minuman jeruk dan sajikan."
+    ],
+    "tips": "Cicipi lebih dulu karena tingkat manis jeruk berbeda-beda.",
+    "isPopular": false,
+    "isFeatured": false
+  },
+  {
+    "id": "jus-alpukat",
+    "title": "Jus Alpukat",
+    "category": "Minuman",
+    "description": "Jus alpukat lembut untuk teman santai.",
+    "emoji": "🥑",
+    "colorHex": "#CDE7C0",
+    "durationMinutes": 10,
+    "servings": 2,
+    "difficulty": "Mudah",
+    "rating": 4.7,
+    "ingredients": [
+      "1 buah alpukat matang",
+      "250 ml susu cair atau air",
+      "1-2 sdm madu atau gula (opsional)",
+      "Es batu secukupnya"
+    ],
+    "steps": [
+      "Belah alpukat dan ambil daging buahnya.",
+      "Masukkan alpukat, susu, dan pemanis ke blender.",
+      "Tambahkan es batu secukupnya.",
+      "Blender hingga halus dan tercampur merata.",
+      "Tuang ke gelas dan sajikan segera."
+    ],
+    "tips": "Tambahkan cairan bila ingin hasil lebih encer.",
+    "isPopular": false,
+    "isFeatured": false
+  },
+  {
+    "id": "puding-cokelat",
+    "title": "Puding Cokelat Susu",
+    "category": "Pencuci Mulut",
+    "description": "Puding cokelat lembut, disajikan dingin setelah mengeras.",
+    "emoji": "🍮",
+    "colorHex": "#E9D1C8",
+    "durationMinutes": 25,
+    "servings": 4,
+    "difficulty": "Mudah",
+    "rating": 4.9,
+    "ingredients": [
+      "1 bungkus agar-agar plain (sekitar 7 g)",
+      "600 ml susu cair",
+      "2 sdm bubuk kakao",
+      "60 g gula (sesuaikan)",
+      "Sejumput garam"
+    ],
+    "steps": [
+      "Campur agar-agar, kakao, gula, dan garam dalam panci.",
+      "Tuang susu sedikit demi sedikit sambil diaduk agar tidak menggumpal.",
+      "Panaskan sambil diaduk hingga mendidih sesuai petunjuk kemasan agar-agar.",
+      "Tuang ke cetakan, diamkan hingga tidak panas.",
+      "Dinginkan di kulkas sampai set lalu sajikan."
+    ],
+    "tips": "Waktu yang tercantum belum termasuk waktu pendinginan di kulkas.",
+    "isPopular": true,
+    "isFeatured": true
+  },
+  {
+    "id": "kolak-pisang",
+    "title": "Kolak Pisang",
+    "category": "Pencuci Mulut",
+    "description": "Hidangan manis pisang dalam kuah santan dan gula merah.",
+    "emoji": "🍠",
+    "colorHex": "#F7D8B1",
+    "durationMinutes": 30,
+    "servings": 4,
+    "difficulty": "Mudah",
+    "rating": 4.7,
+    "ingredients": [
+      "5 buah pisang kepok, potong",
+      "700 ml air",
+      "150 ml santan",
+      "100 g gula merah, sisir",
+      "1 lembar daun pandan",
+      "Sejumput garam"
+    ],
+    "steps": [
+      "Didihkan air bersama gula merah dan daun pandan hingga gula larut.",
+      "Masukkan pisang, masak hingga mulai empuk.",
+      "Tuangkan santan sambil diaduk perlahan.",
+      "Tambahkan garam dan masak dengan api kecil sampai matang.",
+      "Angkat dan sajikan hangat atau dingin."
+    ],
+    "tips": "Aduk perlahan sesudah santan masuk agar kuah tidak pecah.",
+    "isPopular": false,
+    "isFeatured": false
+  },
+  {
+    "id": "salad-buah",
+    "title": "Salad Buah Sederhana",
+    "category": "Pencuci Mulut",
+    "description": "Potongan buah segar dengan saus yogurt ringan.",
+    "emoji": "🍓",
+    "colorHex": "#FAD3D8",
+    "durationMinutes": 15,
+    "servings": 3,
+    "difficulty": "Mudah",
+    "rating": 4.6,
+    "ingredients": [
+      "1 apel, potong dadu",
+      "1 buah pir, potong dadu",
+      "100 g anggur, belah",
+      "100 g melon, potong",
+      "150 g yogurt plain",
+      "1 sdm madu (opsional)",
+      "Keju parut secukupnya (opsional)"
+    ],
+    "steps": [
+      "Cuci buah dengan bersih lalu potong sesuai ukuran suapan.",
+      "Campurkan yogurt dan madu hingga rata.",
+      "Tata potongan buah dalam mangkuk.",
+      "Tuangkan saus yogurt di atas buah.",
+      "Tambahkan sedikit keju parut dan nikmati dalam keadaan dingin."
+    ],
+    "tips": "Simpan buah yang sudah dipotong di lemari pendingin jika tidak langsung disantap.",
+    "isPopular": false,
+    "isFeatured": false
+  }
+]
